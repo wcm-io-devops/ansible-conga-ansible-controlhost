@@ -1,3 +1,22 @@
+galaxy_info:
+  role_name: conga_ansible_controlhost
+  author: Tobias Richter
+  description: Setups tooling for conga ansible aem automation
+  company: pro!vision
+  issue_tracker_url: https://wcm-io.atlassian.net
+  license: Apache
+  min_ansible_version: 2.0
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+  - aem
+  - conga
+  - wcmio
+
 dependencies:
   - { role: geerlingguy.repo-epel, tags: ["dependency"] }
   - { role: srsp.oracle-java, tags: ["dependency"] }
