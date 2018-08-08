@@ -55,5 +55,3 @@
     owner: "{{ controlhost_user }}"
     group: "{{ controlhost_group }}"
     mode: 0640
-
-
