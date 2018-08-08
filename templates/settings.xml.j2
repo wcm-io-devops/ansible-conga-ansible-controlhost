@@ -1,0 +1,75 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <profiles>
+    <profile>
+      <id>central</id>
+
+      <repositories>
+{% for repository in controlhost_maven_repositories %}
+        <repository>
+          <id>{{ repository.id }}</id>
+          <url>{{ repository.url }}</url>
+          <layout>{{ repository.layout | default('default') }}</layout>
+{% if repository.releases is defined  %}
+          <releases>
+{% for key, value in repository.releases.iteritems() %}
+            <{{ key }}>{{ value }}</{{ key }}>
+{% endfor %}
+          </releases>
+{% endif %}
+{% if repository.snapshots is defined  %}
+          <snapshots>
+{% for key, value in repository.snapshots.iteritems() %}
+            <{{ key }}>{{ value }}</{{ key }}>
+{% endfor %}
+          </snapshots>
+{% endif %}
+        </repository>
+{% endfor %}
+      </repositories>
+
+      <pluginRepositories>
+{% for repository in controlhost_maven_repositories %}
+        <pluginRepository>
+          <id>{{ repository.id }}</id>
+          <url>{{ repository.url }}</url>
+          <layout>{{ repository.layout | default('default') }}</layout>
+{% if repository.releases is defined  %}
+          <releases>
+{% for key, value in repository.releases.iteritems() %}
+            <{{ key }}>{{ value }}</{{ key }}>
+{% endfor %}
+          </releases>
+{% endif %}
+{% if repository.snapshots is defined  %}
+          <snapshots>
+{% for key, value in repository.snapshots.iteritems() %}
+            <{{ key }}>{{ value }}</{{ key }}>
+{% endfor %}
+          </snapshots>
+{% endif %}
+        </pluginRepository>
+{% endfor %}
+      </pluginRepositories>
+    </profile>
+
+  </profiles>
+  <servers>
+{% for repository in controlhost_maven_repositories %}
+{% if repository.username is defined and repository.password is defined %}
+    <server>
+      <id>{{ repository.id }}</id>
+      <username>{{ repository.username }}</username>
+      <password>{{ vars['_maven_encrypted_server_password_'+repository.id] }}</password>
+    </server>
+{% endif %}
+{% endfor %}
+  </servers>
+  <activeProfiles>
+    <activeProfile>central</activeProfile>
+  </activeProfiles>
+
+</settings>

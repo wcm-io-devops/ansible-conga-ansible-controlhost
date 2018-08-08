@@ -1,0 +1,5 @@
+dependencies:
+  - { role: geerlingguy.repo-epel, tags: ["dependency"] }
+  - { role: srsp.oracle-java, tags: ["dependency"] }
+  - { role: gantsign.maven, tags: ["dependency"] }
+  - { role: andrewrothstein.terraform, tags: ["dependency"] }

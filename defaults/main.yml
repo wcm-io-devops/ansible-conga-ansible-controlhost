@@ -1,0 +1,45 @@
+controlhost_user: vagrant
+controlhost_group: vagrant
+controlhost_userhome: "{{ ansible_env.HOME }}"
+
+controlhost_maven_path: "{{ controlhost_userhome }}/.m2"
+controlhost_maven_settings_path: "{{ controlhost_maven_path }}/settings.xml"
+controlhost_maven_settings_security_path: "{{ controlhost_maven_path }}/settings-security.xml"
+
+# this must be set!
+# controlhost_maven_master_password:
+
+controlhost_maven_repositories:
+  - id: central
+    url: https://repo.maven.apache.org/maven2/
+  - id: adobe-public-releases
+    url: https://repo.adobe.com/nexus/content/groups/public
+    releases:
+      enabled: "true"
+      updatePolicy: "never"
+    snapshots:
+      enabled: "false"
+
+controlhost_bashrc: "{{ controlhost_userhome }}/.bashrc"
+controlhost_bashrc_editor: "nano"
+
+controlhost_packages_yum:
+  - nano
+  - iftop
+  - htop
+  - iotop
+  - awscli
+
+controlhost_packages_pip:
+  - markupsafe
+  - jmespath
+  - cffi
+  - cryptography
+  - boto
+  - lxml
+  - boto3
+  - rsa
+  - colorama
+  - botocore
+  - s3transfer
+  - awscli

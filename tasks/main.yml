@@ -1,0 +1,20 @@
+- include_tasks: packages/yum.yml
+  tags:
+    - yum-packages
+
+- include_tasks: packages/pip.yml
+  tags:
+    - pip-packages
+
+- include_tasks: maven/setup.yml
+  tags:
+    - maven
+
+- include_tasks: env/setup.yml
+  tags:
+    - env
+
+
+
+
+

@@ -1,0 +1,59 @@
+#- name: Enable mvn for all users
+#  file:
+#    state: link
+#    src: /usr/local/bin/mvn
+#    dest: /usr/bin/mvn
+#    owner: root
+#    group: root
+#    mode: 'u=rwx,go=rx'
+
+- name: "Create .m2 directory for {{ controlhost_user }}"
+  file:
+    path: "{{ controlhost_maven_path }}"
+    state: directory
+    owner: "{{ controlhost_user }}"
+    group: "{{ controlhost_group }}"
+    mode: 0775
+
+- name: "Check if settings-security.xml exists"
+  stat:
+    path: "{{ controlhost_maven_settings_security_path }}"
+  register: _maven_settings_security_stats
+
+- name: "Configure settings-security.xml"
+  block:
+  - name: create maven master password
+    shell: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
+    no_log: true
+    register: _maven_master_password_result
+
+  - name: set encrypted password fact
+    set_fact:
+      controlhost_maven_master_password_encrypted: "{{ _maven_master_password_result.stdout }}"
+    no_log: true
+
+  - name: "Configure maven settings-security.xml"
+    template:
+      src: settings-security.xml.j2
+      dest: "{{ controlhost_maven_settings_security_path }}"
+      owner: "{{ controlhost_user }}"
+      group: "{{ controlhost_group }}"
+      mode: 0640
+
+  become_user: "{{ controlhost_user }}"
+  when: _maven_settings_security_stats.stat.exists == false
+
+- name: Encrypt repository passwords
+  include_tasks: encrypt_maven_server_password.yml
+  with_items: "{{ controlhost_maven_repositories }}"
+  when: item.password is defined
+
+- name: Configure maven settings.xml
+  template:
+    src: settings.xml.j2
+    dest: "{{ controlhost_maven_settings_path }}"
+    owner: "{{ controlhost_user }}"
+    group: "{{ controlhost_group }}"
+    mode: 0640
+
+

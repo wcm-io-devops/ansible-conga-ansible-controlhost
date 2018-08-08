@@ -1,0 +1,4 @@
+- name: geerlingguy.repo-epel
+- name: srsp.oracle-java
+- name: gantsign.maven
+- name: andrewrothstein.terraform
