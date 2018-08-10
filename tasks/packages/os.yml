@@ -2,4 +2,4 @@
   package:
     name: "{{ item }}"
     state: present
-  with_items: "{{ controlhost_packages_yum }}"
+  with_items: "{{ controlhost_packages }}"

@@ -1,0 +1,6 @@
+controlhost_packages:
+  - nano
+  - iftop
+  - htop
+  - iotop
+  - awscli

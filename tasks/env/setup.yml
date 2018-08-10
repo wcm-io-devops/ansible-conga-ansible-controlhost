@@ -3,8 +3,10 @@
     path: "{{ controlhost_bashrc }}"
     block: "export EDITOR={{ controlhost_bashrc_editor }}"
     marker: "# {mark} editor ANSIBLE MANAGED BLOCK"
+  when: controlhost_default_editor is defined
 
-- block:
+- name: "Set environment variable ANSIBLE_VAULT_PASSWORD_FILE to ansible vault pass"
+  block:
   - name: Configure ansible vault environment variable
     blockinfile:
       path: "{{ controlhost_bashrc }}"
