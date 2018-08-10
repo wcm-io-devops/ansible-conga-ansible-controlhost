@@ -15,8 +15,6 @@ controlhost_maven_settings_security_path: "{{ controlhost_maven_path }}/settings
 controlhost_maven_repositories:
   - id: central
     url: https://repo.maven.apache.org/maven2/
-    username: lorem
-    password: lorem
   - id: adobe-public-releases
     url: https://repo.adobe.com/nexus/content/groups/public
     releases:
