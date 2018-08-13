@@ -1,15 +1,24 @@
-- include_tasks: packages/yum.yml
-  tags:
-    - yum-packages
+- name: Include OS family specific variables.
+  include_vars: "family_{{ ansible_os_family }}.yml"
 
-- include_tasks: packages/pip.yml
+- name: Install os packages
+  include_tasks: "packages/os.yml"
+  tags:
+    - os-packages
+    - packages
+
+- name: Install pip packages
+  include_tasks: packages/pip.yml
   tags:
     - pip-packages
+    - packages
 
-- include_tasks: maven/setup.yml
+- name: Setup maven
+  include_tasks: maven/setup.yml
   tags:
     - maven
 
-- include_tasks: env/setup.yml
+- name: Setup environment
+  include_tasks: env/setup.yml
   tags:
     - env

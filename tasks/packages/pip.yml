@@ -1,5 +1,18 @@
+- name: Upgrade pip
+  pip:
+    name: "pip"
+    state: latest
+  when: controlhost_packages_pip_upgrade
+
+- name: Install ansible
+  pip:
+    name: "ansible"
+    version: "{{ controlhost_ansible_version }}"
+  when: controlhost_ansible_version is defined
+
 - name: Install required PIP packages.
   pip:
-    name: "{{ item }}"
+    name: "{{ item.name }}"
     state: present
+    version: "{{ item.version | default(omit) }}"
   with_items: "{{ controlhost_packages_pip }}"

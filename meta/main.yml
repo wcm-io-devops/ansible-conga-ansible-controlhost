@@ -11,6 +11,9 @@ galaxy_info:
   - name: EL
     versions:
     - 7
+  - name: Debian
+    versions:
+    - stretch
 
   galaxy_tags:
   - aem
@@ -18,7 +21,7 @@ galaxy_info:
   - wcmio
 
 dependencies:
-  - { role: geerlingguy.repo-epel, tags: ["dependency"] }
+  - { role: geerlingguy.repo-epel, tags: ["dependency"], when: ansible_os_family == 'RedHat' }
   - { role: srsp.oracle-java, tags: ["dependency"] }
   - { role: gantsign.maven, tags: ["dependency"] }
   - { role: andrewrothstein.terraform, tags: ["dependency"] }
