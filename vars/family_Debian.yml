@@ -4,3 +4,7 @@ controlhost_packages:
   - htop
   - iotop
   - awscli
+  - python2.7
+  - python-pip
+  - git
+  - sshpass

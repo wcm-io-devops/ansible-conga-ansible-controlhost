@@ -1,6 +1,10 @@
 controlhost_packages:
-- nano
-- iftop
-- htop
-- iotop
-- awscli
+  - nano
+  - iftop
+  - htop
+  - iotop
+  - awscli
+  - python
+  - python2-pip
+  - git
+  - sshpass

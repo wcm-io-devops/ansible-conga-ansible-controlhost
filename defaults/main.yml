@@ -28,7 +28,7 @@ controlhost_bashrc: "{{ controlhost_user_home }}/.bashrc"
 # When set the bashrc will export EDITOR with this value
 #controlhost_default_editor: "nano"
 
-#controlhost_ansible_version: 2.6.2
+#controlhost_ansible_version: 2.5.6
 
 controlhost_packages_pip_upgrade: true
 
