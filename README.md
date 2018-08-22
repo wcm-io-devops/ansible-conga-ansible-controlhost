@@ -44,7 +44,7 @@ The users group on the controlhost.
 
 The home directory of the user.
 
-controlhost_maven_path: "{{ controlhost_user_home }}/.m2"
+    controlhost_maven_path: "{{ controlhost_user_home }}/.m2"
 
 Path to the Maven directory.
 
@@ -108,7 +108,7 @@ List of configuration options for a maven repository.
 
 When set the given version of Ansible will be installed on the controlhost.
 
-controlhost_packages_pip_upgrade: true
+    controlhost_packages_pip_upgrade: true
 
 Controls if pip will be executed using the --upgrade option.
 
