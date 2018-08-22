@@ -1,17 +1,31 @@
+# The user on the controlhost
 controlhost_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
+# The users group on the controlhost
 controlhost_group: "{{ controlhost_user }}"
+# The home directory of the user
 controlhost_user_home: "/home/{{ controlhost_user }}"
 
+# Path to the Maven directory
 controlhost_maven_path: "{{ controlhost_user_home }}/.m2"
+# Path to Maven settings.xml
 controlhost_maven_settings_path: "{{ controlhost_maven_path }}/settings.xml"
+# Path to Maven settings-security.xml
 controlhost_maven_settings_security_path: "{{ controlhost_maven_path }}/settings-security.xml"
 
-# When set a maven settings-security.xml will be created with the encrypted master password
+# When set, a Maven settings-security.xml will be created with the encrypted master password and the credentials for the controlhost_maven_repositories
+# will be encrypted using the Maven master password
 #controlhost_maven_master_password:
 
-# When set the ANSIBLE_VAULT_PASSWORD_FILE environment variable in the .bashrc is set
+# When set, the ANSIBLE_VAULT_PASSWORD_FILE environment variable in the .bashrc is set
 #controlhost_vault_pass_path: "{{ controlhost_user_home }}/.ansible/.vault_pass"
 
+# When set the bashrc will export EDITOR with this value
+#controlhost_default_editor: "nano"
+
+# Path to the bash/shell run commands file for provisioning ANSIBLE_VAULT_PASSWORD_FILE and EDITOR.
+controlhost_bashrc: "{{ controlhost_user_home }}/.bashrc"
+
+# List of Maven repositories to be configured in Maven settings.xml
 controlhost_maven_repositories:
   - id: central
     url: https://repo.maven.apache.org/maven2/
@@ -23,13 +37,20 @@ controlhost_maven_repositories:
     snapshots:
       enabled: "false"
 
-controlhost_bashrc: "{{ controlhost_user_home }}/.bashrc"
+# Repository definition
+# - id: [REPO-ID]
+#   url: [REPO-URL]
+#   username: [USERNAME] # optional
+#   password: [USERNAME] # optional
+#   releases:  # (optional)
+#     [KEY]:[VALUE] # will be converted to <key>value</key>
+#   snapshots: # (optional)
+#     [KEY]:[VALUE] # will be converted to <key>value</key>
 
-# When set the bashrc will export EDITOR with this value
-#controlhost_default_editor: "nano"
-
+# When set the given version of Ansible will be installed on the controlhost
 #controlhost_ansible_version: 2.5.6
 
+# Controls if pip will be executed using the --upgrade option
 controlhost_packages_pip_upgrade: true
 
 # Pip packages to install
@@ -47,3 +68,7 @@ controlhost_packages_pip:
   - name: botocore
   - name: s3transfer
   - name: awscli
+
+# pip package definition
+#  - name: [PIP_PACKAGE_NAME]
+#    version: [PIP_PACKAGE_VERSION] # optional
