@@ -1,4 +1,8 @@
 - name: geerlingguy.repo-epel
+  version: 1.2.3
 - name: srsp.oracle-java
+  version: 2.19.1
 - name: gantsign.maven
+  version: 4.0.0
 - name: andrewrothstein.terraform
+  version: v2.2.10
