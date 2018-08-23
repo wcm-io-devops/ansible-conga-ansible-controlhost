@@ -8,3 +8,4 @@ controlhost_packages:
   - python-pip
   - git
   - sshpass
+  - wget
