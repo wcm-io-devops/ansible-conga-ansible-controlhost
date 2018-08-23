@@ -21,7 +21,35 @@ galaxy_info:
   - wcmio
 
 dependencies:
-  - { role: geerlingguy.repo-epel, tags: ["dependency"], when: ansible_os_family == 'RedHat' }
-  - { role: srsp.oracle-java, tags: ["dependency"] }
-  - { role: gantsign.maven, tags: ["dependency"] }
-  - { role: andrewrothstein.terraform, tags: ["dependency"] }
+  - {
+      role: geerlingguy.repo-epel,
+      version: 1.2.3,
+      tags: [
+        "dependency",
+        "dependency.epel"
+      ],
+      when: ansible_os_family == 'RedHat'
+  }
+  - {
+      role: srsp.oracle-java,
+      version: 2.19.1,
+      tags: [
+        "dependency",
+        "dependency.java"
+      ]
+  }
+  - {
+      role: gantsign.maven,
+      version: 4.0.0,
+      tags: [
+        "dependency,",
+        "dependency.maven"
+      ]
+  }
+  - { role: andrewrothstein.terraform,
+      version: v2.2.10,
+      tags: [
+        "dependency",
+        "dependency.terraform"
+      ]
+  }
