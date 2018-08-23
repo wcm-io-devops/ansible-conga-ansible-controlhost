@@ -42,7 +42,7 @@ dependencies:
       role: gantsign.maven,
       version: 4.0.0,
       tags: [
-        "dependency,",
+        "dependency",
         "dependency.maven"
       ]
   }

@@ -19,6 +19,15 @@ controlhost_maven_settings_security_path: "{{ controlhost_maven_path }}/settings
 # When set, the ANSIBLE_VAULT_PASSWORD_FILE environment variable in the .bashrc is set
 #controlhost_vault_pass_path: "{{ controlhost_user_home }}/.ansible/.vault_pass"
 
+# When set the specified file will be copied to the controlhost to 'controlhost_vault_pass_path'
+#controlhost_vault_pass_src:
+
+# The path of the aws credentials file. Works together with:
+controlhost_aws_credentials_path: "{{ controlhost_user_home }}/.aws/credentials"
+
+# When set the specified file will be copied to the control to 'controlhost_aws_credential_path'
+#controlhost_aws_credentials_src:
+
 # When set the bashrc will export EDITOR with this value
 #controlhost_default_editor: "nano"
 

@@ -1,0 +1,7 @@
+- name: "AWS : setup: credentials"
+  include_tasks: credentials.yml
+  when:
+    - controlhost_aws_credentials_src is defined
+    - controlhost_aws_credentials_path is defined
+  tags:
+    aws-credentials
