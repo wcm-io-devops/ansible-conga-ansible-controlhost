@@ -9,6 +9,9 @@ The role installs the following tools
 * Ansible (inlcuding required pip packages like cffi, jmespath, boto etc.)
 * Terraform
 
+When provided the role will deploy your AWS `credentials` and the
+`.vault_pass file`.
+
 The role also enables you to configure the environment in your .bashrc
 if required.
 * EDITOR
@@ -67,6 +70,20 @@ password.
 
 When set, the `ANSIBLE_VAULT_PASSWORD_FILE` environment variable in the
 .bashrc is set.
+
+    #controlhost_vault_pass_src:
+
+When set the specified file will be copied to the controlhost to
+`controlhost_vault_pass_path`.
+
+    controlhost_aws_credentials_path: "{{ controlhost_user_home }}/.aws/credentials"
+
+The path of the aws credentials file. Works together with: `controlhost_aws_credentials_src`.
+
+    #controlhost_aws_credentials_src:
+
+When set the specified file will be copied to the control to
+`controlhost_aws_credential_path`.
 
     #controlhost_default_editor: "nano"
 
