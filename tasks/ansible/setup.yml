@@ -1,0 +1,16 @@
+- name: "Ansible : setup : install Ansible"
+  pip:
+    name: "ansible"
+    version: "{{ controlhost_ansible_version }}"
+  when: controlhost_ansible_version is defined
+  tags:
+    - ansible-installation
+
+- name: "Ansible : setup : setup Ansible vault"
+  include_tasks: vault.yml
+  when:
+    - controlhost_vault_pass_src is defined
+    - controlhost_vault_pass_path is defined
+  tags:
+    - ansible-vault
+

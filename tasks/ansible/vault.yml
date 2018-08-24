@@ -1,0 +1,15 @@
+- name: "Ansible : vault : Ensure target directory exists."
+  file:
+    path: "{{ controlhost_vault_pass_path | dirname }}"
+    owner: "{{ controlhost_user }}"
+    group: "{{ controlhost_group }}"
+    mode: 0700
+    state: directory
+
+- name: "Ansible : vault : copy vault file to controlhost."
+  copy:
+    src: "{{ controlhost_vault_pass_src }}"
+    dest: "{{ controlhost_vault_pass_path }}"
+    owner: "{{ controlhost_user }}"
+    group: "{{ controlhost_group }}"
+    mode: 0600

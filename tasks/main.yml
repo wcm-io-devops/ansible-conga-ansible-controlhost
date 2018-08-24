@@ -13,10 +13,21 @@
     - pip-packages
     - packages
 
+- name: Setup ansible
+  include_tasks: ansible/setup.yml
+  tags:
+  - ansible
+
+- name: Setup AWS
+  include_tasks: aws/setup.yml
+  tags:
+  - aws
+
 - name: Setup maven
   include_tasks: maven/setup.yml
   tags:
     - maven
+
 
 - name: Setup environment
   include_tasks: env/setup.yml
