@@ -13,4 +13,3 @@
     - controlhost_vault_pass_path is defined
   tags:
     - ansible-vault
-
