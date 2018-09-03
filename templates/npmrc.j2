@@ -1,0 +1,5 @@
+registry={{ controlhost_nodejs_npmrc_registries[0].registry }}
+{% if controlhost_nodejs_npmrc_registries[0].username is defined and controlhost_nodejs_npmrc_registries[0].password is defined %}
+always-auth={{ controlhost_nodejs_npmrc_always_auth | lower }}
+_auth={{ (controlhost_nodejs_npmrc_registries[0].username+':'+controlhost_nodejs_npmrc_registries[0].password) | b64encode }}
+{% endif %}
