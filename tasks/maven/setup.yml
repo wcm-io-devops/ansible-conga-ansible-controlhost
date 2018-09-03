@@ -37,7 +37,7 @@
     - controlhost_maven_master_password is defined
 
 - name: "Maven : setup : Encrypt repository passwords"
-  include_tasks: encrypt_maven_server_password.yml
+  include_tasks: encrypt_password.yml
   with_items: "{{ controlhost_maven_repositories }}"
   when: item.password is defined
 
