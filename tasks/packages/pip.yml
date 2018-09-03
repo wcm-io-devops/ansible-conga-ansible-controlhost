@@ -1,10 +1,10 @@
-- name: Upgrade pip
+- name: "packages : pip : Upgrade pip"
   pip:
     name: "pip"
     state: latest
   when: controlhost_packages_pip_upgrade
 
-- name: Install required PIP packages.
+- name: "packages : pip : Install required PIP packages."
   pip:
     name: "{{ item.name }}"
     state: present

@@ -1,4 +1,4 @@
-- name: Install required packages.
+- name: "packages : os : Install required packages."
   package:
     name: "{{ item }}"
     state: present
