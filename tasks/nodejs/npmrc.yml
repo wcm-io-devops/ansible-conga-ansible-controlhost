@@ -1,0 +1,8 @@
+- name: "nodesjs : npmrc : configure .npmrc"
+  template:
+    src: npmrc.j2
+    dest: "{{ controlhost_nodejs_npmrc_path }}"
+    owner: "{{ controlhost_user }}"
+    group: "{{ controlhost_group }}"
+    mode: 0600
+  when: controlhost_nodejs_npmrc_registries is defined

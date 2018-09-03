@@ -28,6 +28,10 @@
   tags:
     - maven
 
+- name: Setup nodejs
+  include_tasks: nodejs/setup.yml
+  tags:
+  - nodejs
 
 - name: Setup environment
   include_tasks: env/setup.yml

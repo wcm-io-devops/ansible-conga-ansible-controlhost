@@ -66,6 +66,24 @@ encrypted master password and the credentials for the
 controlhost_maven_repositories will be encrypted using the Maven master
 password.
 
+    controlhost_nodejs_npmrc_path: "{{ controlhost_user_home }}/.npmrc"
+
+Path to the .npmrc.
+
+    controlhost_nodejs_npmrc_always_auth: true
+
+Controls the "always-auth" parameter in .npmrc.
+
+    # controlhost_nodejs_npmrc_registries:
+      #- registry:
+      #  username:
+      #  password:
+
+When registries are configured the .npmrc will be provisioned. Please
+note that at the moment only one registry can be defined. The username
+and password have to be provided in plan. The role will taking care of
+creating the auth token.
+
     #controlhost_vault_pass_path: "{{ controlhost_user_home }}/.ansible/.vault_pass"
 
 When set, the `ANSIBLE_VAULT_PASSWORD_FILE` environment variable in the
