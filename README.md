@@ -1,7 +1,7 @@
 # wcm_io_devops.conga_ansible_controlhost
 
 This role setups a host as a controlhost for the
-[Ansible Automation for AEM](http://devops.wcm.io/ansible.html).
+[wcm.io DevOps Ansible Automation for AEM](http://devops.wcm.io/ansible-aem/).
 
 The role installs the following tools
 * JDK
