@@ -3,6 +3,8 @@
     name: "pip"
     state: latest
   when: controlhost_packages_pip_upgrade
+  tags:
+    - skip_ansible_lint
 
 - name: "packages : pip : Install required PIP packages."
   pip:

@@ -1,7 +1,7 @@
 - name: "env : setup : Configure default editor"
   blockinfile:
     path: "{{ controlhost_bashrc }}"
-    block: "export EDITOR={{ controlhost_bashrc_editor }}"
+    block: "export EDITOR={{ controlhost_default_editor }}"
     marker: "# {mark} editor ANSIBLE MANAGED BLOCK"
   when: controlhost_default_editor is defined
 

@@ -35,6 +35,22 @@ This role requires Ansible 2.0 or higher.
 
 Available variables are listed below, along with default values.
 
+    controlhost_dependency_maven: true
+
+Enables / disables the maven role dependency.
+
+    controlhost_dependency_java: true
+
+Enables / disables the java role dependency.
+
+    controlhost_dependency_epel: true
+
+Enables / disables the epel role dependency.
+
+    controlhost_dependency_terraform: true
+
+Enables / disables the terraform role dependency.
+
     controlhost_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER) }}"
 
 The user on the controlhost.
