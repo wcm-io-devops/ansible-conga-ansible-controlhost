@@ -31,7 +31,6 @@
       group: "{{ controlhost_group }}"
       mode: 0640
 
-  become_user: "{{ controlhost_user }}"
   when:
     - _maven_settings_security_stats.stat.exists == false
     - controlhost_maven_master_password is defined
