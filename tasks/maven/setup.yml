@@ -14,7 +14,7 @@
 - name: "Maven : setup: Configure settings-security.xml"
   block:
   - name: "Maven : setup : create maven master password"
-    shell: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
+    command: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
     no_log: true
     register: _maven_master_password_result
 
