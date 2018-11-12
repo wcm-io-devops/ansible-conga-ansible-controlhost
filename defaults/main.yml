@@ -85,6 +85,9 @@ controlhost_maven_repositories:
 # Controls if pip will be executed using the --upgrade option
 controlhost_packages_pip_upgrade: true
 
+# enables / disables pip package installation
+controlhost_packages_pip_enabled: true
+
 # Pip packages to install
 controlhost_packages_pip:
   - name: markupsafe
@@ -104,3 +107,6 @@ controlhost_packages_pip:
 # pip package definition
 #  - name: [PIP_PACKAGE_NAME]
 #    version: [PIP_PACKAGE_VERSION] # optional
+
+# enables / disables os package installation
+controlhost_packages_os_enabled: true

@@ -6,12 +6,14 @@
   tags:
     - os-packages
     - packages
+  when: controlhost_packages_os_enabled
 
 - name: Install pip packages
   include_tasks: packages/pip.yml
   tags:
     - pip-packages
     - packages
+  when: controlhost_packages_pip_enabled
 
 - name: Setup ansible
   include_tasks: ansible/setup.yml

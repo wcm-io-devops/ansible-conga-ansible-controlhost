@@ -163,6 +163,10 @@ When set the given version of Ansible will be installed on the controlhost.
 
 Controls if pip will be executed using the --upgrade option.
 
+    controlhost_packages_pip_enabled: true
+
+Enables / disables pip package installation.
+
     controlhost_packages_pip:
       - name: markupsafe
       - name: jmespath
@@ -183,6 +187,10 @@ Pip packages to install.
        version: [PIP_PACKAGE_VERSION] # optional
 
 Format for a pip package entry.
+
+    controlhost_packages_os_enabled: true
+
+Enables / disables os package installation.
 
 ## Dependencies
 
