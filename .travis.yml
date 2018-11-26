@@ -29,7 +29,7 @@ install:
 
 script:
   # Install requirements
-  - ansible-galaxy install -r tests/requirements.yml
+  - ansible-galaxy install -r tests/requirements.yml -p ./tests/requirements
 
   # Run ansible-lint
   - ansible-lint .
