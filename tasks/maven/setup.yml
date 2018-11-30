@@ -32,7 +32,7 @@
       mode: 0640
 
   when:
-    - _maven_settings_security_stats.stat.exists == false
+    - not _maven_settings_security_stats.stat.exists
     - controlhost_maven_master_password is defined
 
 - name: "Maven : setup : Encrypt repository passwords"
