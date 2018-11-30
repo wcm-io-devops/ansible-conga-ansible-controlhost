@@ -89,24 +89,23 @@ controlhost_packages_pip_upgrade: true
 controlhost_packages_pip_enabled: true
 
 # Pip packages to install
+# pip package definition as of https://docs.ansible.com/ansible/latest/modules/pip_module.html
 controlhost_packages_pip:
-  - name: markupsafe
-    # version: ...
-  - name: jmespath
-  - name: cffi
-  - name: cryptography
-  - name: boto
-  - name: lxml
-  - name: boto3
-  - name: rsa
-  - name: colorama
-  - name: botocore
-  - name: s3transfer
-  - name: awscli
+  - markupsafe
+  - jmespath
+  - cffi
+  - cryptography
+  - boto
+  - lxml
+  - boto3
+  - rsa
+  - colorama
+  - botocore
+  - s3transfer
+  - awscli
 
-# pip package definition
-#  - name: [PIP_PACKAGE_NAME]
-#    version: [PIP_PACKAGE_VERSION] # optional
+# List of os packages to install on the controlhost. OS specific, see variable definition in the vars folder.
+# controlhost_packages_os: []
 
 # enables / disables os package installation
 controlhost_packages_os_enabled: true

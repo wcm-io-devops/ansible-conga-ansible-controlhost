@@ -1,4 +1,4 @@
-controlhost_packages:
+__controlhost_packages_os:
   - nano
   - iftop
   - htop
