@@ -8,7 +8,5 @@
 
 - name: "packages : pip : Install required PIP packages."
   pip:
-    name: "{{ item.name }}"
+    name: "{{ controlhost_packages_pip }}"
     state: present
-    version: "{{ item.version | default(omit) }}"
-  with_items: "{{ controlhost_packages_pip }}"

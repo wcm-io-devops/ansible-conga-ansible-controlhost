@@ -168,25 +168,27 @@ Controls if pip will be executed using the --upgrade option.
 Enables / disables pip package installation.
 
     controlhost_packages_pip:
-      - name: markupsafe
-      - name: jmespath
-      - name: cffi
-      - name: cryptography
-      - name: boto
-      - name: lxml
-      - name: boto3
-      - name: rsa
-      - name: colorama
-      - name: botocore
-      - name: s3transfer
-      - name: awscli
+      - markupsafe
+      - jmespath
+      - cffi
+      - cryptography
+      - boto
+      - lxml
+      - boto3
+      - rsa
+      - colorama
+      - botocore
+      - s3transfer
+      - awscli
 
-Pip packages to install.
+Pip packages to install. Pip package definition as of When using Ansible
+2.7+ you can also specify versions as documented here:
+https://docs.ansible.com/ansible/latest/modules/pip_module.html.
 
-     - name: [PIP_PACKAGE_NAME]
-       version: [PIP_PACKAGE_VERSION] # optional
+    # controlhost_packages_os: []    
 
-Format for a pip package entry.
+List of os packages to install on the controlhost. OS specific, see
+variable definition in the vars folder.
 
     controlhost_packages_os_enabled: true
 

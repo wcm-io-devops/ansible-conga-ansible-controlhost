@@ -1,5 +1,9 @@
+- name: Define controlhost_packages.
+  set_fact:
+    controlhost_packages_os: "{{ __controlhost_packages_os }}"
+  when: controlhost_packages_os is not defined
+
 - name: "packages : os : Install required packages."
   package:
-    name: "{{ item }}"
+    name: "{{ controlhost_packages_os }}"
     state: present
-  with_items: "{{ controlhost_packages }}"
