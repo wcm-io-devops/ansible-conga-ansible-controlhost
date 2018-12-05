@@ -8,6 +8,7 @@
 
 - name: "Maven : setup : check if mvn executable is reachable."
   command: "which mvn"
+  changed_when: false
   become_user: "{{ controlhost_user }}"
   become: yes
 
