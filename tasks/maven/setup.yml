@@ -6,6 +6,11 @@
     group: "{{ controlhost_group }}"
     mode: 0775
 
+- name: "Maven : setup : check if mvn executable is reachable."
+  command: "which mvn"
+  become_user: "{{ controlhost_user }}"
+  become: yes
+
 - name: "Maven : setup : Check if settings-security.xml exists"
   stat:
     path: "{{ controlhost_maven_settings_security_path }}"
