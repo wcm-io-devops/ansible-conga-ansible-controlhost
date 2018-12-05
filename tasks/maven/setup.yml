@@ -15,6 +15,8 @@
   block:
   - name: "Maven : setup : create maven master password"
     command: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
+    become_user: "{{ controlhost_user }}"
+    become: yes
     no_log: true
     register: _maven_master_password_result
 
