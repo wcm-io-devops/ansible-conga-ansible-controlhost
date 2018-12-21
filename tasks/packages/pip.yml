@@ -10,3 +10,6 @@
   pip:
     name: "{{ controlhost_packages_pip }}"
     state: present
+  register: _controlhost_packages_pip_result
+  until: _controlhost_packages_pip_result | success
+  retries: 3

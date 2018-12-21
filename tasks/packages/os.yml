@@ -7,3 +7,6 @@
   package:
     name: "{{ controlhost_packages_os }}"
     state: present
+  register: _controlhost_packages_os_result
+  until: _controlhost_packages_os_result | success
+  retries: 3
