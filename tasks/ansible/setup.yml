@@ -4,7 +4,7 @@
     version: "{{ controlhost_ansible_version }}"
   when: controlhost_ansible_version is defined
   register: _ansible_install_result
-  until: _ansible_install_result | success
+  until: _ansible_install_result is success
   retries: 3
   tags:
     - ansible-installation

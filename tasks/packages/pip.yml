@@ -11,5 +11,5 @@
     name: "{{ controlhost_packages_pip }}"
     state: present
   register: _controlhost_packages_pip_result
-  until: _controlhost_packages_pip_result | success
+  until: _controlhost_packages_pip_result is success
   retries: 3
