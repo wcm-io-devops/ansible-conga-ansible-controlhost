@@ -73,7 +73,7 @@ controlhost_maven_repositories:
 # - id: [REPO-ID]
 #   url: [REPO-URL]
 #   username: [USERNAME] # optional
-#   password: [USERNAME] # optional
+#   password: [PASSWORD] # optional
 #   releases:  # (optional)
 #     [KEY]:[VALUE] # will be converted to <key>value</key>
 #   snapshots: # (optional)
