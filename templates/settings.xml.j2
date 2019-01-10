@@ -63,7 +63,7 @@
     <server>
       <id>{{ repository.id }}</id>
       <username>{{ repository.username }}</username>
-      <password>{{ vars['_maven_encrypted_server_password_'+repository.id] }}</password>
+      <password>{{ vars['_maven_encrypted_server_password_'+(repository.id | regex_replace('[^a-zA-Z0-9_]','_'))] }}</password>
     </server>
 {% endif %}
 {% endfor %}
