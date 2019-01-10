@@ -23,6 +23,8 @@ controlhost_maven_path: "{{ controlhost_user_home }}/.m2"
 controlhost_maven_settings_path: "{{ controlhost_maven_path }}/settings.xml"
 # Path to Maven settings-security.xml
 controlhost_maven_settings_security_path: "{{ controlhost_maven_path }}/settings-security.xml"
+# Threads used by maven when downloading artifacts
+controlhost_maven_artifact_threads: 5
 
 # When set, a Maven settings-security.xml will be created with the encrypted master password and the credentials for the controlhost_maven_repositories
 # will be encrypted using the Maven master password
