@@ -75,6 +75,11 @@ Path to Maven settings.xml.
 
 Path to Maven settings-security.xml.
 
+    controlhost_maven_artifact_threads: 5
+
+Threads used by maven when downloading artifacts. Increasing improves
+download speed.
+
     #controlhost_maven_master_password:
 
 When set, a Maven settings-security.xml will be created with the

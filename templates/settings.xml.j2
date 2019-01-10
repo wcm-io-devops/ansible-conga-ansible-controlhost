@@ -6,7 +6,9 @@
   <profiles>
     <profile>
       <id>central</id>
-
+      <properties>
+         <maven.artifact.threads>{{ controlhost_maven_artifact_threads }}</maven.artifact.threads>
+      </properties>
       <repositories>
 {% for repository in controlhost_maven_repositories %}
         <repository>
