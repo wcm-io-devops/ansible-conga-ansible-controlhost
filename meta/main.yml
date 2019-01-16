@@ -51,7 +51,6 @@ dependencies:
       when: controlhost_dependency_maven
   }
   - { role: andrewrothstein.terraform,
-      version: v2.2.10,
       tags: [
         "dependency",
         "dependency.terraform"
