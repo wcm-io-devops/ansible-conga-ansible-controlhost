@@ -16,6 +16,6 @@
   - name: "env : setup : Print hint for sourcing of .bash_profile"
     debug:
       msg: >-
-        Make sure to execute 'source ~/.bashrc' to ensure
+        Make sure to execute '{{ controlhost_bashrc }}' to ensure
         that environment variable 'ANSIBLE_VAULT_PASSWORD_FILE' is present
   when: controlhost_vault_pass_path is defined
