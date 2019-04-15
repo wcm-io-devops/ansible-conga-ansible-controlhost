@@ -70,6 +70,15 @@
 {% endif %}
 {% endfor %}
   </servers>
+  <mirrors>
+{% for mirror in controlhost_maven_mirrors %}
+    <mirror>
+      <id>{{ mirror.id }}</id>
+      <url>{{ mirror.url }}</url>
+      <mirrorOf>{{ mirror.mirrorOf }}</mirrorOf>
+    </mirror>
+{% endfor %}
+  </mirrors>
   <activeProfiles>
     <activeProfile>central</activeProfile>
   </activeProfiles>

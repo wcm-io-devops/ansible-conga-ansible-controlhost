@@ -160,6 +160,19 @@ configured here.
 ```
 List of configuration options for a maven repository.
 
+    controlhost_maven_mirrors: []
+
+List of mirror configurations. See
+https://maven.apache.org/guides/mini/guide-mirror-settings.html for
+configuration details.
+
+    # Mirror configuration
+    #  - id: [REPO-ID]
+    #    url: [REPO-URL]
+    #    mirrorOf: *
+
+Example for a mirror configuration.
+
     #controlhost_ansible_version: 2.5.6
 
 When set the given version of Ansible will be installed on the controlhost.
