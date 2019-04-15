@@ -35,6 +35,7 @@ dependencies:
   }
   - {
       role: srsp.oracle-java,
+      version: 2.19.2,
       tags: [
         "dependency",
         "dependency.java"
