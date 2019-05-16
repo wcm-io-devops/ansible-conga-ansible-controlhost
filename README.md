@@ -173,6 +173,11 @@ configuration details.
 
 Example for a mirror configuration.
 
+    # controlhost_maven_settings_custom:
+
+When set this part is rendered as is into the <settings></settings>
+block of the maven settings.
+
     #controlhost_ansible_version: 2.5.6
 
 When set the given version of Ansible will be installed on the controlhost.

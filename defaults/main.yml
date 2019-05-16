@@ -87,6 +87,9 @@ controlhost_maven_mirrors: []
 #    url: https://repo.maven.apache.org/maven2/
 #    mirrorOf: *
 
+# When set this part is rendered as is into the <settings></settings> block of the maven settings
+# controlhost_maven_settings_custom:
+
 # When set the given version of Ansible will be installed on the controlhost
 #controlhost_ansible_version: 2.5.6
 

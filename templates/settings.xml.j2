@@ -83,4 +83,8 @@
     <activeProfile>central</activeProfile>
   </activeProfiles>
 
+{% if controlhost_maven_settings_custom is defined %}
+  {{ controlhost_maven_settings_custom }}
+{% endif %}
+
 </settings>
