@@ -3,7 +3,6 @@ __controlhost_packages_os:
   - iftop
   - htop
   - iotop
-  - awscli
   - python2.7
   - python-pip
   - git
