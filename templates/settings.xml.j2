@@ -17,14 +17,14 @@
           <layout>{{ repository.layout | default('default') }}</layout>
 {% if repository.releases is defined  %}
           <releases>
-{% for key, value in repository.releases.iteritems() %}
+{% for key, value in repository.releases.items() %}
             <{{ key }}>{{ value }}</{{ key }}>
 {% endfor %}
           </releases>
 {% endif %}
 {% if repository.snapshots is defined  %}
           <snapshots>
-{% for key, value in repository.snapshots.iteritems() %}
+{% for key, value in repository.snapshots.items() %}
             <{{ key }}>{{ value }}</{{ key }}>
 {% endfor %}
           </snapshots>
@@ -41,14 +41,14 @@
           <layout>{{ repository.layout | default('default') }}</layout>
 {% if repository.releases is defined  %}
           <releases>
-{% for key, value in repository.releases.iteritems() %}
+{% for key, value in repository.releases.items() %}
             <{{ key }}>{{ value }}</{{ key }}>
 {% endfor %}
           </releases>
 {% endif %}
 {% if repository.snapshots is defined  %}
           <snapshots>
-{% for key, value in repository.snapshots.iteritems() %}
+{% for key, value in repository.snapshots.items() %}
             <{{ key }}>{{ value }}</{{ key }}>
 {% endfor %}
           </snapshots>
