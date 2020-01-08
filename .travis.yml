@@ -4,6 +4,7 @@ cache: pip
 python:
   - "2.7"
   - "3.6"
+  - "3.7"
 env:
   # run against latest version
   - ANSIBLE_VERSION=latest
@@ -18,7 +19,9 @@ addons:
   apt:
     packages:
     - python-pip
+    - python-setuptools
     - python3-pip
+    - python3-setuptools
 
 install:
   # Install ansible and dependencies
