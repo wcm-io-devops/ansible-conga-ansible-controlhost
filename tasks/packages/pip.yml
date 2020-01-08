@@ -2,6 +2,7 @@
   pip:
     name: "pip"
     state: latest
+    executable: "{{ controlhost_pip_executable | default(__controlhost_pip_executable) }}"
   when: controlhost_packages_pip_upgrade
   tags:
     - skip_ansible_lint
@@ -10,6 +11,7 @@
   pip:
     name: "{{ controlhost_packages_pip }}"
     state: present
+    executable: "{{ controlhost_pip_executable | default(__controlhost_pip_executable) }}"
   register: _controlhost_packages_pip_result
   until: _controlhost_packages_pip_result is success
   retries: 3

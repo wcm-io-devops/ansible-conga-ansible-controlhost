@@ -3,8 +3,10 @@ __controlhost_packages_os:
   - iftop
   - htop
   - iotop
-  - python2.7
-  - python-pip
+  - "{{ 'python2.7' if controlhost_python_version == '2' else 'python3.6' }}"
+  - "{{ 'python-pip' if controlhost_python_version == '2' else 'python3-pip' }}"
   - git
   - sshpass
   - wget
+
+controlhost_pip_executable: "/usr/bin/pip3"
