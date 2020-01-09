@@ -3,7 +3,7 @@ __controlhost_packages_os:
   - iftop
   - htop
   - iotop
-  - "{{ 'python2.7' if controlhost_python_version == '2' else 'python3.6' }}"
+  - "{{ 'python2.7' if controlhost_python_version == '2' else 'python3' }}"
   - "{{ 'python-pip' if controlhost_python_version == '2' else 'python3-pip' }}"
   - git
   - sshpass
