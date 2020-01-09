@@ -93,6 +93,9 @@ controlhost_maven_mirrors: []
 # When set the given version of Ansible will be installed on the controlhost
 #controlhost_ansible_version: 2.5.6
 
+# Use either 2 for Python2 or 3 for Python3 here
+controlhost_python_version: 3
+
 # Controls if pip will be executed using the --upgrade option
 controlhost_packages_pip_upgrade: true
 
