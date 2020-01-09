@@ -182,6 +182,10 @@ block of the maven settings.
 
 When set the given version of Ansible will be installed on the controlhost.
 
+    controlhost_python_version: 3
+    
+Controls if Python3 or Python2 will be installed. The exact version depends on the host's OS.
+
     controlhost_packages_pip_upgrade: true
 
 Controls if pip will be executed using the --upgrade option.

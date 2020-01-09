@@ -8,5 +8,3 @@ __controlhost_packages_os:
   - git
   - sshpass
   - wget
-
-controlhost_pip_executable: "/usr/local/bin/pip3"
