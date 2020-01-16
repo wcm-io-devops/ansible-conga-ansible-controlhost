@@ -123,3 +123,9 @@ controlhost_packages_pip:
 
 # enables / disables os package installation
 controlhost_packages_os_enabled: true
+
+# Enables / disables Terraform convenience utilities setup
+controlhost_terraform_utilities: true
+
+# Set a Terraform project name that will be used in TF_DATA_DIR variable
+#controlhost_terraform_project_name: sample-project

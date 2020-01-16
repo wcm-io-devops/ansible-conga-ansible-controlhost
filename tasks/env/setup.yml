@@ -21,3 +21,26 @@
         Make sure to execute '{{ controlhost_bashrc }}' to ensure
         that environment variable 'ANSIBLE_VAULT_PASSWORD_FILE' is present
   when: controlhost_vault_pass_path is defined
+
+- name: "env : setup : Set up Terraform convenience utilities"
+  block:
+    - name: "env : setup : Set up Bash aliases"
+      blockinfile:
+        path: "{{ controlhost_bashrc }}"
+        marker: "# {mark} Terraform aliases ANSIBLE MANAGED BLOCK"
+        block: |
+          alias tfp="terraform plan -out plans/plan"
+          alias tfa="terraform apply plans/plan"
+          alias tfi="terraform init"
+
+    - name: "env : setup : Set terraform_project_dir fact"
+      set_fact:
+        terraform_project_dir: "terraform-{{ controlhost_terraform_project_name | default('sample-project') }}"
+
+    - name: "env : setup : Set up Bash aliases"
+        blockinfile:
+          path: "{{ controlhost_bashrc }}"
+          marker: "# {mark} Terraform data dir ANSIBLE MANAGED BLOCK"
+          block: |
+            export TF_DATA_DIR={{ controlhost_user_home }}/.terraform.d/{{ terraform_project_dir }}/
+  when: controlhost_terraform_utilities is true

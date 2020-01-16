@@ -221,6 +221,12 @@ variable definition in the vars folder.
 
 Enables / disables os package installation.
 
+    controlhost_terraform_utilities
+    
+Enables / disables Terraform convenience utilities setup, including Bash aliases and setting `TF_DATA_DIR`.
+This also allows for using a non-rsync folder sync with Windows hosts due to Terraform symlinks being created outside of
+the sync scope.
+
 ## Dependencies
 
 This role depends on the following roles:
