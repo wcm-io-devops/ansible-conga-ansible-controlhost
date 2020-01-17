@@ -227,10 +227,12 @@ Enables / disables Terraform convenience utilities setup, including Bash aliases
 This also allows for using a non-rsync folder sync with Windows hosts due to Terraform symlinks being created outside of
 the sync scope.
 
-    # controlhost_terraform_project_name: sample-project
+    # controlhost_terraform_data_dir : tf-data-dir
 
-Set a Terraform project name that will be used in TF_DATA_DIR variable. Terraform will store symlinks there, which makes
-it easier to sync folders for Terraform on Windows hosts without changing local security policies ([cf.](https://github.com/hashicorp/vagrant/issues/6024))
+Set a path that will be used for the `TF_DATA_DIR` environment variable. 
+Terraform will store symlinks at `{{ controlhost_user_home }}/.terraform/{{ controlhost_terraform_data_dir }}/`,
+which makes it easier to sync folders for Terraform on Windows hosts without changing local security policies 
+([cf.](https://github.com/hashicorp/vagrant/issues/6024))
 
 
 
