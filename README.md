@@ -29,7 +29,7 @@ will be installed to allow fast monitoring and debugging:
 
 ## Requirements
 
-This role requires Ansible 2.0 or higher.
+This role requires Ansible 2.7 or higher.
 
 ## Role Variables
 
