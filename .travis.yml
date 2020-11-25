@@ -2,6 +2,7 @@
 language: python
 cache: pip
 python:
+  - "3.6"
   - "3.7"
 env:
   # run against latest version
@@ -23,7 +24,7 @@ addons:
 
 install:
   # Install ansible and dependencies
-  - PIP=$(which pip3 || which pip); if [ "$ANSIBLE_VERSION" = "latest" ]; then "$PIP" install ansible ansible-lint --upgrade; else "$PIP" install ansible=="$ANSIBLE_VERSION" ansible-lint --upgrade; fi
+  - PIP=$(which pip3 || which pip); if [ "$ANSIBLE_VERSION" = "latest" ]; then "$PIP" install ansible ansible-lint --upgrade; else "$PIP" install ansible=="$ANSIBLE_VERSION" ansible-lint=="$ANSIBLE_LINT_VERSION" --upgrade; fi
 
   # Check ansible version
   - ansible --version
