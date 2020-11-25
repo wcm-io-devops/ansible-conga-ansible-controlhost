@@ -8,7 +8,7 @@ env:
   # run against latest version
   - ANSIBLE_VERSION=latest
   # run against minimal required version
-  - ANSIBLE_VERSION=2.7.*
+  - ANSIBLE_VERSION=2.7.* ANSIBLE_LINT_VERSION=4.2.*
 
 # Use the new container infrastructure
 sudo: false
