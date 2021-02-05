@@ -1,3 +1,4 @@
+---
 - name: Include OS family specific variables.
   include_vars: "family_{{ ansible_os_family }}.yml"
 
@@ -18,12 +19,12 @@
 - name: Setup ansible
   include_tasks: ansible/setup.yml
   tags:
-  - ansible
+    - ansible
 
 - name: Setup AWS
   include_tasks: aws/setup.yml
   tags:
-  - aws
+    - aws
 
 - name: Setup maven
   include_tasks: maven/setup.yml
@@ -33,7 +34,7 @@
 - name: Setup nodejs
   include_tasks: nodejs/setup.yml
   tags:
-  - nodejs
+    - nodejs
 
 - name: Setup environment
   include_tasks: env/setup.yml

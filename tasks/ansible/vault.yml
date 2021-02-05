@@ -1,3 +1,4 @@
+---
 - name: "Ansible : vault : Ensure target directory exists."
   file:
     path: "{{ controlhost_vault_pass_path | dirname }}"

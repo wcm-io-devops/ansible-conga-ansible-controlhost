@@ -1,23 +1,26 @@
+---
 - name: "env : setup : Configure default editor"
   blockinfile:
     path: "{{ controlhost_bashrc }}"
     block: "export EDITOR={{ controlhost_default_editor }}"
     marker: "# {mark} editor ANSIBLE MANAGED BLOCK"
     create: yes
+    mode: 0640
   when: controlhost_default_editor is defined
 
 - name: "env : setup : Set environment variable ANSIBLE_VAULT_PASSWORD_FILE to ansible vault pass"
   block:
-  - name: "env : setup : Configure ansible vault environment variable"
-    blockinfile:
-      path: "{{ controlhost_bashrc }}"
-      block: "export ANSIBLE_VAULT_PASSWORD_FILE={{ controlhost_vault_pass_path }}"
-      marker: "# {mark} ansible-vault ANSIBLE MANAGED BLOCK"
-      create: yes
+    - name: "env : setup : Configure ansible vault environment variable"
+      blockinfile:
+        path: "{{ controlhost_bashrc }}"
+        block: "export ANSIBLE_VAULT_PASSWORD_FILE={{ controlhost_vault_pass_path }}"
+        marker: "# {mark} ansible-vault ANSIBLE MANAGED BLOCK"
+        create: yes
+        mode: 0640
 
-  - name: "env : setup : Print hint for sourcing of .bash_profile"
-    debug:
-      msg: >-
-        Make sure to execute '{{ controlhost_bashrc }}' to ensure
-        that environment variable 'ANSIBLE_VAULT_PASSWORD_FILE' is present
+    - name: "env : setup : Print hint for sourcing of .bash_profile"
+      debug:
+        msg: >-
+          Make sure to execute '{{ controlhost_bashrc }}' to ensure
+          that environment variable 'ANSIBLE_VAULT_PASSWORD_FILE' is present
   when: controlhost_vault_pass_path is defined

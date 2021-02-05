@@ -1,3 +1,4 @@
+---
 - name: "nodesjs : npmrc : configure .npmrc"
   template:
     src: npmrc.j2

@@ -1,3 +1,4 @@
+---
 - name: "Ansible : setup : install Ansible"
   pip:
     name: "ansible"
