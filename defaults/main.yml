@@ -1,3 +1,4 @@
+---
 # Enables / disables the maven role dependency
 controlhost_dependency_maven: true
 
@@ -28,7 +29,7 @@ controlhost_maven_artifact_threads: 5
 
 # When set, a Maven settings-security.xml will be created with the encrypted master password and the credentials for the controlhost_maven_repositories
 # will be encrypted using the Maven master password
-#controlhost_maven_master_password:
+# controlhost_maven_master_password:
 
 # Path to the .npmrc
 controlhost_nodejs_npmrc_path: "{{ controlhost_user_home }}/.npmrc"
@@ -37,24 +38,24 @@ controlhost_nodejs_npmrc_always_auth: true
 # When registries are configured the npmrc will be provisioned. At the moment only one registry can be defined.
 # The username and password have to be provided in plan. The role will taking care of creating the auth token.
 # controlhost_nodejs_npmrc_registries:
-  #- registry:
-  #  username: # plain username
-  #  password: # plain password
+#   - registry:
+#     username: # plain username
+#     password: # plain password
 
 # When set, the ANSIBLE_VAULT_PASSWORD_FILE environment variable in the .bashrc is set
-#controlhost_vault_pass_path: "{{ controlhost_user_home }}/.ansible/.vault_pass"
+# controlhost_vault_pass_path: "{{ controlhost_user_home }}/.ansible/.vault_pass"
 
 # When set the specified file will be copied to the controlhost to 'controlhost_vault_pass_path'
-#controlhost_vault_pass_src:
+# controlhost_vault_pass_src:
 
 # The path of the aws credentials file. Works together with: `controlhost_aws_credentials_src`
 controlhost_aws_credentials_path: "{{ controlhost_user_home }}/.aws/credentials"
 
 # When set the specified file will be copied to the control to `controlhost_aws_credential_path`
-#controlhost_aws_credentials_src:
+# controlhost_aws_credentials_src:
 
 # When set the bashrc will export EDITOR with this value
-#controlhost_default_editor: "nano"
+# controlhost_default_editor: "nano"
 
 # Path to the bash/shell run commands file for provisioning ANSIBLE_VAULT_PASSWORD_FILE and EDITOR.
 controlhost_bashrc: "{{ controlhost_user_home }}/.bashrc"
@@ -91,7 +92,7 @@ controlhost_maven_mirrors: []
 # controlhost_maven_settings_custom:
 
 # When set the given version of Ansible will be installed on the controlhost
-#controlhost_ansible_version: 2.5.6
+# controlhost_ansible_version: 2.5.6
 
 # Use either 2 for Python2 or 3 for Python3 here
 controlhost_python_version: 3

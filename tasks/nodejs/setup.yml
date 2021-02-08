@@ -1,3 +1,4 @@
+---
 - name: "nodejs : setup : npmrc"
   include_tasks: npmrc.yml
   tags:

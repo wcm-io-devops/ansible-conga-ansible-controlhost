@@ -1,3 +1,4 @@
+---
 - name: "Maven : setup : Create .m2 directory for {{ controlhost_user }}"
   file:
     path: "{{ controlhost_maven_path }}"
@@ -19,25 +20,25 @@
 
 - name: "Maven : setup: Configure settings-security.xml"
   block:
-  - name: "Maven : setup : create maven master password"
-    command: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
-    become_user: "{{ controlhost_user }}"
-    become: yes
-    no_log: true
-    register: _maven_master_password_result
+    - name: "Maven : setup : create maven master password"
+      command: "mvn --encrypt-master-password {{ controlhost_maven_master_password }}"
+      become_user: "{{ controlhost_user }}"
+      become: yes
+      no_log: true
+      register: _maven_master_password_result
 
-  - name: "Maven : setup : set encrypted password fact"
-    set_fact:
-      controlhost_maven_master_password_encrypted: "{{ _maven_master_password_result.stdout }}"
-    no_log: true
+    - name: "Maven : setup : set encrypted password fact"
+      set_fact:
+        controlhost_maven_master_password_encrypted: "{{ _maven_master_password_result.stdout }}"
+      no_log: true
 
-  - name: "Maven : setup : Configure maven settings-security.xml"
-    template:
-      src: settings-security.xml.j2
-      dest: "{{ controlhost_maven_settings_security_path }}"
-      owner: "{{ controlhost_user }}"
-      group: "{{ controlhost_group }}"
-      mode: 0640
+    - name: "Maven : setup : Configure maven settings-security.xml"
+      template:
+        src: settings-security.xml.j2
+        dest: "{{ controlhost_maven_settings_security_path }}"
+        owner: "{{ controlhost_user }}"
+        group: "{{ controlhost_group }}"
+        mode: 0640
 
   when:
     - not _maven_settings_security_stats.stat.exists

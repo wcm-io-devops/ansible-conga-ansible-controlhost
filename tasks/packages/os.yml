@@ -1,3 +1,4 @@
+---
 - name: Define controlhost_packages.
   set_fact:
     controlhost_packages_os: "{{ __controlhost_packages_os }}"
