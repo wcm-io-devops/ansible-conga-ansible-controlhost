@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   role_name: conga_ansible_controlhost
+  namespace: wcm_io_devops
   author: Tobias Richter
   description: Setups tooling for conga ansible aem automation
   company: pro!vision
