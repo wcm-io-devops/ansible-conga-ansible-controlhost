@@ -34,8 +34,8 @@ dependencies:
       - ansible_os_family == 'RedHat'
       - controlhost_dependency_epel
 
-  - role: srsp.oracle-java
-    version: 2.19.2
+  - role: geerlingguy.java
+    version: 1.10.0
     tags:
       - "dependency"
       - "dependency.java"

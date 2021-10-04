@@ -225,7 +225,7 @@ Enables / disables os package installation.
 
 This role depends on the following roles:
 * [geerlingguy.repo-epel](https://galaxy.ansible.com/geerlingguy/repo-epel) (RedHat OS only)
-* [srsp.oracle-java](https://galaxy.ansible.com/srsp/oracle-java)
+* [geerlingguy.java](https://galaxy.ansible.com/geerlingguy/java)
 * [gantsign.maven](https://galaxy.ansible.com/gantsign/maven)
 * [andrewrothstein.terraform](https://galaxy.ansible.com/andrewrothstein/terraform)
 
